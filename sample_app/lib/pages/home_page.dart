@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                 leading: const Icon(Icons.settings, color: Colors.white),
                 onTap: () {},
               ),),
-              const SizedBox(height: 500.0),
+              const SizedBox(height: 350.0),
               Padding(
               padding: const EdgeInsets.only(left: 20, bottom: 25),
               child: ListTile(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sample_app/components/product.dart';
+import 'package:sample_app/data/product.dart';
 
 // ignore: must_be_immutable
 class ProductTile extends StatelessWidget {
@@ -10,7 +10,6 @@ class ProductTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 30,
       margin: const EdgeInsets.only(left: 20),
       width: 300,
       decoration: BoxDecoration(
@@ -23,7 +22,7 @@ class ProductTile extends StatelessWidget {
           const SizedBox(height: 30,),
           ClipRRect(
             borderRadius: BorderRadius.circular(20),
-            child: Image.asset(product.image,),),
+            child: Image.asset(product.image, scale: 1.5,),),
           Text(product.description),
           const SizedBox(height: 10,),
           Row(
@@ -48,7 +47,7 @@ class ProductTile extends StatelessWidget {
                   color: Colors.black,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: Row(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Text("Add to cart",

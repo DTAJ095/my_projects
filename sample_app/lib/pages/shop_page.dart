@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sample_app/components/product.dart';
 import 'package:sample_app/components/product_tile.dart';
+import 'package:sample_app/data/categories.dart';
+import 'package:sample_app/data/product.dart';
 
 class ShopPage extends StatefulWidget {
   const ShopPage({super.key});
@@ -55,6 +56,17 @@ class _ShopPageState extends State<ShopPage> {
     image: 'assets/sneaker.png'
   )
 ];
+
+  final List<Category> categories = [
+    Category(
+        categoryName: "Electronics",
+        quantityOfProducts: 100,
+        image: ''),
+    Category(
+        categoryName: 'Clothes',
+        quantityOfProducts: 50,
+        image: ''),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -114,7 +126,29 @@ class _ShopPageState extends State<ShopPage> {
               return ProductTile(product: products[index]);
             }
           ),
-        )
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('Categories', style: GoogleFonts.alata(
+                textStyle: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black
+                )
+              ),),
+              Text('See all', style: GoogleFonts.alata(
+                textStyle: const TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue
+                )
+              ),)
+            ],
+          ),
+        ),
       ],
     );
   }
