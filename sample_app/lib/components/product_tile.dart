@@ -20,10 +20,10 @@ class ProductTile extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          SizedBox(height: 30,),
+          const SizedBox(height: 30,),
           ClipRRect(
-            child: Image.asset(product.image,),
-            borderRadius: BorderRadius.circular(20),),
+            borderRadius: BorderRadius.circular(20),
+            child: Image.asset(product.image,),),
           Text(product.description),
           const SizedBox(height: 10,),
           Row(
