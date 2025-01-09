@@ -19,28 +19,46 @@ class ProductTile extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          const SizedBox(height: 30,),
+          const SizedBox(
+            height: 30,
+          ),
           ClipRRect(
             borderRadius: BorderRadius.circular(20),
-            child: Image.asset(product.image, scale: 1.5,),),
+            child: Image.asset(
+              product.image,
+              scale: 3,
+            ),
+          ),
           Text(product.description),
-          const SizedBox(height: 10,),
+          const SizedBox(
+            height: 10,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Column(
                 children: [
-                  Text(product.name,
-                  style: GoogleFonts.alata(
-                    textStyle: const TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold)
-                  ),),
-                  Text("\$${product.price}",
-                  style: GoogleFonts.alata(
-                    textStyle: const TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold)
-                  ),),
+                  Text(
+                    product.name,
+                    style: GoogleFonts.alata(
+                        textStyle: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold)),
+                  ),
+                  Text(
+                    "\$${product.price}",
+                    style: GoogleFonts.alata(
+                        textStyle: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold)),
+                  ),
                 ],
               ),
-              const SizedBox(width: 20,),
+              const SizedBox(
+                width: 20,
+              ),
               Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
@@ -50,15 +68,23 @@ class ProductTile extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text("Add to cart",
-                    style: GoogleFonts.alata(
-                      textStyle: const TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold)
-                    ),),
+                    Text(
+                      "Add to cart",
+                      style: GoogleFonts.alata(
+                          textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold)),
+                    ),
                     IconButton(
                       onPressed: () {
                         Navigator.pushNamed(context, '/cart');
                       },
-                      icon: const Icon(Icons.add_shopping_cart_rounded, size: 30, color: Colors.white,),
+                      icon: const Icon(
+                        Icons.add_shopping_cart_rounded,
+                        size: 30,
+                        color: Colors.white,
+                      ),
                     )
                   ],
                 ),

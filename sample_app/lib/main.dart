@@ -4,7 +4,6 @@ import 'package:sample_app/pages/home_page.dart';
 import 'package:sample_app/pages/login.dart';
 import 'package:sample_app/pages/register.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
