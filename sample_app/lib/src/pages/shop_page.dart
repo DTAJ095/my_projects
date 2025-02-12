@@ -1,9 +1,8 @@
-import 'package:animation_list/animation_list.dart';
 import 'package:auto_scroll/auto_scroll.dart';
 import 'package:flutter/material.dart';
-import 'package:sample_app/components/product_tile.dart';
-import 'package:sample_app/data/categories.dart';
-import 'package:sample_app/data/product.dart';
+import 'package:sample_app/src/components/product_tile.dart';
+import 'package:sample_app/src/data/categories.dart';
+import 'package:sample_app/src/data/product.dart';
 
 class ShopPage extends StatefulWidget {
   const ShopPage({super.key});

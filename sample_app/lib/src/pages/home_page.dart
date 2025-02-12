@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:sample_app/pages/cart_page.dart';
-import 'package:sample_app/pages/shop_page.dart';
+import 'package:sample_app/src/pages/cart_page.dart';
+import 'package:sample_app/src/pages/shop_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

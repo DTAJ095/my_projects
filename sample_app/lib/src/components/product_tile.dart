@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sample_app/data/product.dart';
+import 'package:sample_app/src/data/product.dart';
 
 // ignore: must_be_immutable
 class ProductTile extends StatelessWidget {
   ProductTile({super.key, required this.product});
   Product product;
+
+  void addToCart() {
+    //add product to cart
+    
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -78,6 +83,7 @@ class ProductTile extends StatelessWidget {
                     ),
                     IconButton(
                       onPressed: () {
+
                         Navigator.pushNamed(context, '/cart');
                       },
                       icon: const Icon(

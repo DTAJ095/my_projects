@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sample_app/data/categories.dart';
+import 'package:sample_app/src/data/categories.dart';
 
 // ignore: must_be_immutable
 class CategoryTile extends StatelessWidget {
