@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sample_app/src/data/product.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
@@ -25,12 +26,23 @@ class _CartPageState extends State<CartPage> {
                         fontWeight: FontWeight.bold)),
               ),
             ),
-            ListView.builder(itemBuilder: (context, index) {
-              return ListTile(
-                title: Text('Item $index'),
-              );
-            }),
           ],
         ));
+  }
+}
+
+class Cart {
+  List<Product> products = [];
+  double total = 0;
+
+  void addProduct(Product product) {
+    products.add(product);
+    print(products);
+    total += product.price;
+  }
+
+  void removeProduct(Product product) {
+    products.remove(product);
+    total -= product.price;
   }
 }

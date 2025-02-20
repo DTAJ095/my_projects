@@ -1,4 +1,3 @@
-import 'package:auto_scroll/auto_scroll.dart';
 import 'package:flutter/material.dart';
 import 'package:sample_app/src/components/product_tile.dart';
 import 'package:sample_app/src/data/categories.dart';
@@ -12,43 +11,6 @@ class ShopPage extends StatefulWidget {
 }
 
 class _ShopPageState extends State<ShopPage> {
-  final List<Product> products = [
-    Product(
-        name: 'All Star',
-        description: "Nice Shoes",
-        price: 100,
-        image: 'assets/allstar.jpeg'),
-    Product(
-        name: 'Basket',
-        description: "Nice Basket",
-        price: 100,
-        image: 'assets/basket1.png'),
-    Product(
-        name: 'Sport Shoes',
-        description: "Nice Shoes",
-        price: 100,
-        image: 'assets/basket2.jpeg'),
-    Product(
-        name: 'Sneaker',
-        description: "Nice Shoes",
-        price: 100,
-        image: 'assets/sneaker.png'),
-    Product(
-      name: 'Sneaker',
-      description: "Nice Shoes",
-      price: 100,
-      image: 'assets/sneaker1.jpeg',
-    ),
-  ];
-
-  final List<Category> categories = [
-    Category(categoryName: "Electronics", quantityOfProducts: 100, image: ''),
-    Category(categoryName: 'Clothes', quantityOfProducts: 50, image: ''),
-    Category(categoryName: 'Shoes', quantityOfProducts: 50, image: ''),
-    Category(categoryName: 'Bags', quantityOfProducts: 50, image: ''),
-    Category(categoryName: 'Furnitures', quantityOfProducts: 50, image: '')
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,25 +64,15 @@ class _ShopPageState extends State<ShopPage> {
             ),
           ),
           const SizedBox(height: 20),
-          AutoScroller(
-            lengthIdentifier: products.length,
-            anchorThreshold: 10,
-            duration: const Duration(seconds: 2),
-            scrollAxis: Axis.horizontal,
-            startAnchored: true,
-            builder: (context, controller) {
-              return SizedBox(
-                height: 300,
-                child: ListView.builder(
-                  controller: controller,
-                  itemCount: products.length,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return ProductTile(product: products[index]);
-                  },
-                ),
-              );
-            },
+          SizedBox(
+            height: 300,
+            child: ListView.builder(
+              itemCount: products.length,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return ProductTile(product: products[index]);
+              },
+            ),
           ),
           const SizedBox(height: 20),
           const Padding(
@@ -169,11 +121,6 @@ class _ShopPageState extends State<ShopPage> {
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 10),
-                      Text(
-                        'Quantity: ${categories[index].quantityOfProducts}',
-                        style: const TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.bold),
-                      ),
                     ],
                   ),
                 );

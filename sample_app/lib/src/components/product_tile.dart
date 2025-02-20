@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sample_app/src/data/product.dart';
+import 'package:sample_app/src/pages/cart_page.dart';
 
 // ignore: must_be_immutable
-class ProductTile extends StatelessWidget {
+class ProductTile extends StatefulWidget {
   ProductTile({super.key, required this.product});
   Product product;
 
-  void addToCart() {
-    //add product to cart
-    
-  }
+  @override
+  State<ProductTile> createState() => _ProductTileState();
+}
+
+class _ProductTileState extends State<ProductTile> {
+  final Cart cart = Cart();
 
   @override
   Widget build(BuildContext context) {
@@ -30,11 +33,11 @@ class ProductTile extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: Image.asset(
-              product.image,
+              widget.product.image,
               scale: 3,
             ),
           ),
-          Text(product.description),
+          Text(widget.product.description),
           const SizedBox(
             height: 10,
           ),
@@ -44,7 +47,7 @@ class ProductTile extends StatelessWidget {
               Column(
                 children: [
                   Text(
-                    product.name,
+                    widget.product.name,
                     style: GoogleFonts.alata(
                         textStyle: const TextStyle(
                             color: Colors.black,
@@ -52,7 +55,7 @@ class ProductTile extends StatelessWidget {
                             fontWeight: FontWeight.bold)),
                   ),
                   Text(
-                    "\$${product.price}",
+                    "\$${widget.product.price}",
                     style: GoogleFonts.alata(
                         textStyle: const TextStyle(
                             color: Colors.black,
@@ -83,8 +86,7 @@ class ProductTile extends StatelessWidget {
                     ),
                     IconButton(
                       onPressed: () {
-
-                        Navigator.pushNamed(context, '/cart');
+                        cart.addProduct(widget.product);
                       },
                       icon: const Icon(
                         Icons.add_shopping_cart_rounded,
